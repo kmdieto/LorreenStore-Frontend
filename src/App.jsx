@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./pages/Header";
-import LandingPage from "./pages/LandingPage";
-import ProductsPage from "./pages/ProductsPage";
-import { ThemeProvider } from "./context/ThemeContext";
-import { CartProvider } from "./context/cartContext";
+import Header from "./pages/Header.jsx";
+import LandingPage from "./pages/LandingPage.jsx";
+import ProductsPage from "./pages/ProductsPage.jsx";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
+import { CartProvider } from "./context/cartContext.jsx";
 import "./App.css";
 
 export default function App() {
