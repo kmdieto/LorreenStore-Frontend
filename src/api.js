@@ -1,8 +1,4 @@
-// Backend API URL (Netlify env variable OR Render backend)
-let API_URL = import.meta.env.VITE_API_URL || "https://lorreenstorebackend.onrender.com";
-
-// Remove trailing slash (to avoid "//api")
-API_URL = API_URL.replace(/\/+$/, "");
+const API_URL = import.meta.env.VITE_API_URL || "https://lorreenstorebackend.onrender.com";
 
 export async function fetchProducts() {
   try {
@@ -14,13 +10,13 @@ export async function fetchProducts() {
     });
 
     if (!response.ok) {
-      console.error("Backend returned:", response.status, response.statusText);
-      throw new Error("Network response was not ok");
+      console.error("Backend error:", response.status, response.statusText);
+      throw new Error("Failed to fetch products");
     }
 
     return await response.json();
   } catch (error) {
-    console.error("Error fetching products:", error);
+    console.error("Fetch error:", error);
     return [];
   }
 }
