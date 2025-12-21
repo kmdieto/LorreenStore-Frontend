@@ -18,5 +18,8 @@ export default function App() {
         </Routes>
       </CartProvider>
     </ThemeProvider>
+    
   );
+
 }
+console.log("API URL:", import.meta.env.VITE_API_URL);
