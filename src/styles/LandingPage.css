@@ -1,21 +1,23 @@
 /* === Carousel Section === */
 .carousel-container {
   position: relative;
-  width: 100vw;
-  height: 75vh;
+  width: 100%;
+  height: 80vh;
   overflow: hidden;
 }
 
 .slide {
   width: 100%;
-  height: 75vh;
+  height: 80vh;
 }
 
 .slide img {
   width: 100%;
-  height: 75vh;
+  height: 80vh;
   object-fit: cover;
   display: block;
+  /* Make sure it’s centered */
+  margin: 0 auto;
 }
 
 /* === Gradient Overlay === */
@@ -25,36 +27,41 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  /* Violet → Purple → Black gradient */
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.4),
+    rgba(128, 0, 128, 0.6),
+    rgba(75, 0, 130, 0.6),
     rgba(0, 0, 0, 0.7)
   );
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
   padding: 20px;
+  color: white;
 }
 
-/* === Fade-in Animation === */
+/* === Hero Text === */
 .hero-title {
-  font-size: 3rem;
+  font-family: 'Dancing Script', cursive; /* Cool calligraphy font */
+  font-size: 4rem;
   font-weight: 700;
   animation: fadeInUp 1.2s ease forwards;
   opacity: 0;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 1rem;
   animation: fadeInUp 1.8s ease forwards;
   opacity: 0;
 }
 
+/* Fade-in keyframes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -77,11 +84,11 @@
 /* === Mobile adjustments === */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .carousel-container {
