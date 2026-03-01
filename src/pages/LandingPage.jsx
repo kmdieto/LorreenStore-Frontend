@@ -1,13 +1,12 @@
 import React from "react";
 import Slider from "react-slick";
-import "../styles/LandingPage.css";
 
+// Import slick carousel styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import electronics from "../assets/Electronics.jpg";
-import clothes from "../assets/clothes.jpg";
-import clothing from "../assets/clothing.jpg";
+// Landing page CSS
+import "../styles/LandingPage.css";
 
 export default function LandingPage() {
   const settings = {
@@ -20,27 +19,26 @@ export default function LandingPage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
-    fade: true, // 🔥 smooth fade instead of slide
+    fade: true, // smooth fade effect
   };
 
   return (
     <>
+      {/* Full-width carousel */}
       <div className="carousel-container">
         <Slider {...settings}>
           <div className="slide">
-            <img src={electronics} alt="Electronics" />
+            <img src="/images/Electronics.jpg" alt="Electronics" />
           </div>
-
           <div className="slide">
-            <img src={clothes} alt="Clothes" />
+            <img src="/images/clothes.jpg" alt="Clothes" />
           </div>
-
           <div className="slide">
-            <img src={clothing} alt="Clothing" />
+            <img src="/images/clothing.jpg" alt="Clothing" />
           </div>
         </Slider>
 
-        {/* 🔥 Gradient Overlay */}
+        {/* Gradient overlay with hero text */}
         <div className="hero-overlay">
           <h1 className="hero-title">LOrreen Store</h1>
           <p className="hero-subtitle">
@@ -49,6 +47,7 @@ export default function LandingPage() {
         </div>
       </div>
 
+      {/* Centered content below carousel */}
       <div className="landing">
         <h2>Featured Categories</h2>
         <p>Discover quality products curated just for you.</p>
