@@ -1,72 +1,58 @@
 import React from "react";
 import Slider from "react-slick";
-import "../styles/LandingPage.css";
-import { Link } from "react-router-dom";
+import "./LandingPage.css";
 
-const fallbackImages = [
-  {
-    id: "s1",
-    primary: "/images/Electronics.jpg",
-    secondary: "/images/clothes.jpg",
-    title: "Electronics & Gadgets",
-  },
-  {
-    id: "s2",
-    primary: "/images/clothing.jpg",
-    secondary: "/images/clothes.jpg",
-    title: "Fashion & Accessories",
-  },
-  {
-    id: "s3",
-    primary: "/images/clothes.jpg",
-    secondary: "/images/Electronics.jpg",
-    title: "Home, Tools & Essentials",
-  },
-];
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const LandingPage = () => {
+import electronics from "../assets/Electronics.jpg";
+import clothes from "../assets/clothes.jpg";
+import clothing from "../assets/clothing.jpg";
+
+export default function LandingPage() {
   const settings = {
-    dots: true,
+    dots: false,
+    arrows: false,
     infinite: true,
-    speed: 900,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000, // 4 seconds per frame
-    arrows: false,
-    pauseOnHover: true,
+    pauseOnHover: false,
+    fade: true, // 🔥 smooth fade instead of slide
   };
 
   return (
-    <div className="landing-wrapper">
-      <div className="hero-carousel">
+    <>
+      <div className="carousel-container">
         <Slider {...settings}>
-          {fallbackImages.map((img) => (
-            <div key={img.id} className="slide">
-              <div
-                className="blended-background"
-                style={{
-                  backgroundImage: `
-                    url(${img.primary}),
-                    url(${img.secondary})
-                  `,
-                }}
-              >
-                <div className="overlay"></div>
+          <div className="slide">
+            <img src={electronics} alt="Electronics" />
+          </div>
 
-                <div className="hero-content">
-                  <h1>{img.title}</h1>
-                  <Link to="/products">
-                    <button>Shop Now</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
+          <div className="slide">
+            <img src={clothes} alt="Clothes" />
+          </div>
+
+          <div className="slide">
+            <img src={clothing} alt="Clothing" />
+          </div>
         </Slider>
-      </div>
-    </div>
-  );
-};
 
-export default LandingPage;
+        {/* 🔥 Gradient Overlay */}
+        <div className="hero-overlay">
+          <h1 className="hero-title">LOrreen Store</h1>
+          <p className="hero-subtitle">
+            Shop Electronics, Fashion & More
+          </p>
+        </div>
+      </div>
+
+      <div className="landing">
+        <h2>Featured Categories</h2>
+        <p>Discover quality products curated just for you.</p>
+      </div>
+    </>
+  );
+}
