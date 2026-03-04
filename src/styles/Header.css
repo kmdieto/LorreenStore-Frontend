@@ -6,56 +6,64 @@
   justify-content: space-between;
   align-items: center;
   transition: all 0.4s ease;
+
+  /* Kingfisher Blue → Dark Blue */
+  background: linear-gradient(
+    90deg,
+    #00bfff,   /* kingfisher bright blue */
+    #0096ff,   /* strong blue */
+    #003366    /* deep dark blue */
+  );
+
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 80, 160, 0.4);
 }
 
-/* LIGHT MODE */
-.header {
-  background: white;
-  color: #333;
-}
-
-/* DARK MODE (Violet → Purple → Skyblue) */
+/* Optional darker version if using darkMode */
 .header.dark {
   background: linear-gradient(
     90deg,
-    #800080,
-    #4b0082,
-    #87ceeb
+    #0096ff,
+    #0050b3,
+    #001f4d
   );
-  color: white;
 }
 
-/* LOGO */
+/* === LOGO === */
 .logo {
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
-/* NAV */
+/* === NAV LINKS === */
 .nav-links a {
   margin: 0 1rem;
   text-decoration: none;
-  color: inherit;
+  color: white;
   font-weight: 500;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  text-shadow: 0 0 8px rgba(255,255,255,0.8);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
 }
 
-/* BUTTON */
+/* === THEME BUTTON === */
 .theme-toggle {
   border: none;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
-  background: #800080;
-  color: white;
-  transition: 0.3s ease;
+  background: white;
+  color: #0050b3;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
 }
