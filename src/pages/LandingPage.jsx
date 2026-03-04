@@ -12,7 +12,7 @@ export default function LandingPage() {
     arrows: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -31,13 +31,16 @@ export default function LandingPage() {
             <img src="/images/clothes.jpg" alt="Clothes" />
           </div>
           <div className="slide">
-            <img src="/images/clothing.jpg" alt="Clothing" />
+            <img src="/images/clothing.jpg" alt="Fashion" />
           </div>
         </Slider>
 
         <div className="hero-overlay">
-          <h1 className="hero-title">LOrreen Store</h1>
-          <p className="hero-subtitle">Shop Electronics, Fashion & More</p>
+          <h1 className="hero-title">Lorreen Store</h1>
+          <p className="hero-subtitle">
+            Shop Electronics, Fashion & More
+          </p>
+          <button className="hero-btn">Shop Now</button>
         </div>
       </div>
 

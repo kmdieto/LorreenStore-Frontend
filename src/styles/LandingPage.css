@@ -2,22 +2,26 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   overflow: hidden;
 }
 
+/* Make slick fill full height */
+.slick-slider,
+.slick-list,
+.slick-track {
+  height: 90vh;
+}
+
 .slide {
-  width: 100%;
-  height: 80vh;
+  height: 90vh;
 }
 
 .slide img {
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   object-fit: cover;
   display: block;
-  /* Make sure it’s centered */
-  margin: 0 auto;
 }
 
 /* === Gradient Overlay === */
@@ -27,45 +31,63 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 5;
 
-  /* Violet → Purple → Black gradient */
   background: linear-gradient(
     to bottom,
     rgba(128, 0, 128, 0.6),
     rgba(75, 0, 130, 0.6),
-    rgba(0, 0, 0, 0.7)
+    rgba(135, 206, 235, 0.7)
   );
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
   text-align: center;
   padding: 20px;
-  color: white;
 }
 
 /* === Hero Text === */
 .hero-title {
-  font-family: 'Dancing Script', cursive; /* Cool calligraphy font */
+  font-family: 'Dancing Script', cursive;
   font-size: 4rem;
   font-weight: 700;
-  animation: fadeInUp 1.2s ease forwards;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease forwards;
   opacity: 0;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  margin-top: 1rem;
-  animation: fadeInUp 1.8s ease forwards;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.5s ease forwards;
   opacity: 0;
 }
 
-/* Fade-in keyframes */
+/* CTA Button */
+.hero-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #800080, #4b0082, #87ceeb);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(135, 206, 235, 0.8);
+}
+
+/* Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -76,26 +98,27 @@
 /* === Below Carousel Section === */
 .landing {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 4rem auto;
   text-align: center;
   padding: 0 1rem;
 }
 
-/* === Mobile adjustments === */
+/* === Responsive === */
 @media (max-width: 768px) {
+  .carousel-container,
+  .slick-slider,
+  .slick-list,
+  .slick-track,
+  .slide,
+  .slide img {
+    height: 60vh;
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }
 
   .hero-subtitle {
     font-size: 1.2rem;
-  }
-
-  .carousel-container {
-    height: 50vh;
-  }
-
-  .slide img {
-    height: 50vh;
   }
 }
