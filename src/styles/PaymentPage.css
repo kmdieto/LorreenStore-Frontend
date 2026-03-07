@@ -1,0 +1,122 @@
+.payment-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.payment-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #003366;
+}
+
+/* Tabs */
+.payment-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.payment-tabs button {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  margin: 0 0.25rem;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  background: #ddd;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.payment-tabs button.active {
+  background: linear-gradient(90deg, #00bfff, #003366);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.payment-tabs button:hover:not(.active) {
+  background: #ccc;
+}
+
+/* Tab content */
+.tab-content {
+  padding: 1rem;
+  background: white;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+}
+
+.tab-pane p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.tab-pane input {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.tab-pane button {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.tab-pane button:hover {
+  background: #00bfff;
+}
+
+/* Other methods dropdown */
+.other-methods {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.other-methods select {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.other-methods button {
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.other-methods button:hover {
+  background: #00bfff;
+}
+
+/* Cart total */
+.cart-total {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #003366;
+}

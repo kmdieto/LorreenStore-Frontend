@@ -1,38 +1,132 @@
 .products-container {
-  padding: 20px;
-  background: #14da9c;
-  min-height: 100vh;
-  color: white;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
 }
+
+.products-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #003366;
+}
+
+/* SEARCH */
+
+.product-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+/* CATEGORY */
+
+.category-filter {
+  margin-bottom: 20px;
+}
+
+.category-filter button {
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #0096ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-filter button:hover {
+  background: #003366;
+}
+
+/* GRID */
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
+/* CARD */
+
 .product-card {
-  border: 1px solid #c0cd12;
+  background: white;
+  border-radius: 12px;
   padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  background: #2e74de;
-  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
+/* IMAGE */
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+
+.product-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.product-card p {
+  color: #0096ff;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+/* BUTTON */
+
 .product-btn {
-  background: violet;
+  background: linear-gradient(90deg,#00bfff,#0096ff,#003366);
   border: none;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  color: white;
   cursor: pointer;
-  margin-top: 10px;
+  transition: 0.3s;
 }
 
 .product-btn:hover {
-  background: #ff66ff;
+  transform: scale(1.05);
+}
+
+/* LOAD MORE */
+
+.load-more {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #003366;
+  color: white;
+  cursor: pointer;
+}
+
+/* LOADING + ERROR */
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: red;
 }

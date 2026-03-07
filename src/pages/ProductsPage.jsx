@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/cartContext";
 import "../styles/ProductsPage.css";
 
@@ -32,7 +33,7 @@ const ProductsPage = () => {
       <h2>Our Products</h2>
       <div className="products-grid">
         {products.map((product) => {
-          // ✅ Get first image URL if available
+          // Use first image or placeholder
           const firstImage =
             product.images && product.images.length > 0
               ? product.images[0].image_url
@@ -40,14 +41,26 @@ const ProductsPage = () => {
 
           return (
             <div className="product-card" key={product.id}>
-              <img
-                src={firstImage}
-                alt={product.name}
-                className="product-image"
-              />
-              <h3>{product.name}</h3>
+              {/* Clicking image or name goes to product detail */}
+              <Link to={`/products/${product.id}`}>
+                <img
+                  src={firstImage}
+                  alt={product.name}
+                  className="product-image"
+                />
+              </Link>
+
+              <Link to={`/products/${product.id}`}>
+                <h3>{product.name}</h3>
+              </Link>
+
               <p>Ksh {product.price}</p>
-              <button className="product-btn" onClick={() => addToCart(product)}>
+
+              {/* Add to Cart stays functional */}
+              <button
+                className="product-btn"
+                onClick={() => addToCart(product)}
+              >
                 Add to Cart
               </button>
             </div>
