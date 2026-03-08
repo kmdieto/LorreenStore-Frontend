@@ -7,63 +7,60 @@
   align-items: center;
   transition: all 0.4s ease;
 
-  /* Kingfisher Blue → Dark Blue */
+  /* Gradient overlay on background image */
   background: linear-gradient(
-    90deg,
-    #00bfff,   /* kingfisher bright blue */
-    #0096ff,   /* strong blue */
-    #003366    /* deep dark blue */
-  );
+      90deg,
+      rgba(0, 191, 255, 0.8),   /* Kingfisher bright blue */
+      rgba(0, 150, 255, 0.8)    /* Strong blue */
+    ),
+    url('/images/header-bg.jpg') no-repeat center center;
+  background-size: cover;
 
   color: white;
   box-shadow: 0 4px 20px rgba(0, 80, 160, 0.4);
 }
 
-/* Optional darker version if using darkMode */
-.header.dark {
-  background: linear-gradient(
-    90deg,
-    #0096ff,
-    #0050b3,
-    #001f4d
-  );
-}
-
 /* === LOGO === */
 .logo {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Poppins', sans-serif; /* Modern sans-serif */
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* === NAV LINKS === */
 .nav-links a {
   margin: 0 1rem;
   text-decoration: none;
-  color: rgb(234, 130, 11);
-  font-weight: 500;
-  transition: all 0.3s ease;
+  color: white;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+  display: inline-block;
 }
 
+/* 3D lift effect on hover */
 .nav-links a:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
+  transform: translateY(-5px) scale(1.05);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  color: #ffeb3b; /* Optional: highlight color */
 }
 
-/* === THEME BUTTON === */
-.theme-toggle {
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  background: white;
-  color: #0050b3;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
 
-.theme-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  .nav-links {
+    margin-top: 0.5rem;
+  }
+
+  .nav-links a {
+    margin: 0 0.5rem;
+  }
 }
