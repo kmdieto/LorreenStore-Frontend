@@ -1,45 +1,134 @@
-/* TRENDING PRODUCTS */
+/* src/styles/LandingPage.css */
 
-.trending{
-  padding:50px 40px;
-  background:#f5f7fb;
-  text-align:center;
+/* === Carousel Section === */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
 }
 
-.trending-grid{
-  margin-top:30px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+.slide {
+  width: 100%;
+  height: 80vh;
 }
 
-.product-card{
-  background:white;
-  border-radius:10px;
-  padding:15px;
-  cursor:pointer;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  transition:0.3s;
+.slide img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  display: block;
 }
 
-.product-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:6px;
+/* === Gradient Overlay === */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Violet → Purple → Skyblue gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(128, 0, 128, 0.5),
+    rgba(75, 0, 130, 0.5),
+    rgba(11, 90, 237, 0.6)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
 }
 
-.product-card h3{
-  margin-top:10px;
-  font-size:1.1rem;
+/* === Hero Text === */
+.hero-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
 }
 
-.price{
-  color:#0096ff;
-  font-weight:bold;
-  margin-top:5px;
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1.8s ease forwards;
+  opacity: 0;
 }
 
-.product-card:hover{
-  transform:translateY(-5px);
+.hero-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background: #00bfff; /* vibrant skyblue */
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 191, 255, 0.5);
+}
+
+/* Fade-in keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Featured Categories Section === */
+.landing {
+  max-width: 1200px;
+  margin: 3rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.landing h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.landing p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* === Mobile adjustments === */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 50vh;
+  }
+
+  .slide img {
+    height: 50vh;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
 }
