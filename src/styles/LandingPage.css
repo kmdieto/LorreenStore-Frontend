@@ -132,3 +132,129 @@
     padding: 0.6rem 1.5rem;
   }
 }
+/* ===============================
+   FEATURED CATEGORIES SECTION
+================================= */
+
+.categories-section {
+  padding: 60px 40px;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.categories-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: 600;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.category-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.category-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.category-name {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ===============================
+   TRENDING PRODUCTS
+================================= */
+
+.trending-section {
+  padding: 70px 40px;
+  background: white;
+}
+
+.trending-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.trending-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.trending-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.trending-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.trending-info {
+  padding: 15px;
+}
+
+.trending-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.trending-price {
+  color: #0a74ff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+  .categories-section,
+  .trending-section {
+    padding: 40px 20px;
+  }
+
+  .categories-title,
+  .trending-title {
+    font-size: 1.8rem;
+  }
+
+}
