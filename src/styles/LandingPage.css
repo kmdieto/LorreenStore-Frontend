@@ -1,260 +1,160 @@
-/* src/styles/LandingPage.css */
+/* ===== PAGE ===== */
 
-/* === Carousel Section === */
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
+.landing-page{
+font-family: Arial, Helvetica, sans-serif;
 }
 
-.slide {
-  width: 100%;
-  height: 80vh;
+/* ===== HERO ===== */
+
+.hero{
+position:relative;
+height:80vh;
+overflow:hidden;
 }
 
-.slide img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-  display: block;
+.hero-slide img{
+width:100%;
+height:80vh;
+object-fit:cover;
 }
 
-/* === Gradient Overlay === */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.hero-overlay{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+color:white;
 
-  /* Violet → Purple → Skyblue gradient */
-  background: linear-gradient(
-    to bottom,
-    rgba(128, 0, 128, 0.5),
-    rgba(75, 0, 130, 0.5),
-    rgba(11, 90, 237, 0.6)
-  );
+background:linear-gradient(
+rgba(0,80,200,0.55),
+rgba(0,0,120,0.55)
+);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  color: white;
+padding:40px;
+border-radius:10px;
 }
 
-/* === Hero Text === */
-.hero-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  animation: fadeInUp 1.2s ease forwards;
-  opacity: 0;
+.hero-overlay h1{
+font-size:3rem;
+margin-bottom:10px;
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 1.8s ease forwards;
-  opacity: 0;
+.hero-overlay p{
+font-size:1.3rem;
+margin-bottom:20px;
 }
 
-.hero-btn {
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  background: #00bfff; /* vibrant skyblue */
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-overlay button{
+background:#007bff;
+border:none;
+color:white;
+padding:12px 30px;
+border-radius:6px;
+cursor:pointer;
+font-size:1rem;
+transition:0.3s;
 }
 
-.hero-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 191, 255, 0.5);
+.hero-overlay button:hover{
+background:#0056d2;
+transform:translateY(-2px);
 }
 
-/* Fade-in keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* ===== CATEGORIES ===== */
+
+.categories{
+padding:70px 40px;
+background:#f5f7fb;
+text-align:center;
 }
 
-/* === Featured Categories Section === */
-.landing {
-  max-width: 1200px;
-  margin: 3rem auto;
-  text-align: center;
-  padding: 0 1rem;
+.categories h2{
+font-size:2rem;
+margin-bottom:40px;
 }
 
-.landing h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
 }
 
-.landing p {
-  font-size: 1.1rem;
-  color: #555;
+.category-card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:0.3s;
 }
 
-/* === Mobile adjustments === */
-@media (max-width: 768px) {
-  .carousel-container {
-    height: 50vh;
-  }
-
-  .slide img {
-    height: 50vh;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .hero-btn {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
-  }
-}
-/* ===============================
-   FEATURED CATEGORIES SECTION
-================================= */
-
-.categories-section {
-  padding: 60px 40px;
-  background: #f7f9fc;
-  text-align: center;
+.category-card:hover{
+transform:translateY(-8px);
 }
 
-.categories-title {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-  color: #222;
-  font-weight: 600;
+.category-card img{
+width:100%;
+height:180px;
+object-fit:cover;
 }
 
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: auto;
+.category-card span{
+display:block;
+padding:15px;
+font-weight:600;
 }
 
-.category-card {
-  background: white;
-  border-radius: 14px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+/* ===== TRENDING ===== */
+
+.trending{
+padding:70px 40px;
+background:white;
+text-align:center;
 }
 
-.category-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+.trending h2{
+font-size:2rem;
+margin-bottom:40px;
 }
 
-.category-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
 }
 
-.category-name {
-  padding: 15px;
-  font-size: 1.2rem;
-  font-weight: 500;
+.product-card{
+background:white;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+overflow:hidden;
+transition:0.3s;
 }
 
-/* ===============================
-   TRENDING PRODUCTS
-================================= */
-
-.trending-section {
-  padding: 70px 40px;
-  background: white;
+.product-card:hover{
+transform:translateY(-6px);
 }
 
-.trending-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-  font-weight: 600;
+.product-card img{
+width:100%;
+height:200px;
+object-fit:cover;
 }
 
-.trending-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
+.product-card h3{
+font-size:1.1rem;
+padding:10px;
 }
 
-.trending-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.trending-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-}
-
-.trending-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.trending-info {
-  padding: 15px;
-}
-
-.trending-info h4 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-}
-
-.trending-price {
-  color: #0a74ff;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-/* ===============================
-   MOBILE
-================================= */
-
-@media (max-width: 768px) {
-
-  .categories-section,
-  .trending-section {
-    padding: 40px 20px;
-  }
-
-  .categories-title,
-  .trending-title {
-    font-size: 1.8rem;
-  }
-
+.product-card p{
+padding-bottom:15px;
+font-weight:bold;
+color:#007bff;
 }

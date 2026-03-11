@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -8,10 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/LandingPage.css";
 
 export default function LandingPage() {
-  const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
-
-  const API = import.meta.env.VITE_API_URL;
 
   const settings = {
     dots: false,
@@ -19,95 +14,104 @@ export default function LandingPage() {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 4000,
-    speed: 1000,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-    fade: true,
+    fade: true
   };
 
-  // Fetch products
-  useEffect(() => {
-    fetch(`${API}/products`)
-      .then((res) => res.json())
-      .then((data) => setProducts(data.slice(0, 4))) // show 4 products
-      .catch((err) => console.error("Error loading products:", err));
-  }, []);
-
   return (
-    <>
-      {/* HERO CAROUSEL */}
-      <div className="carousel-container">
+    <div className="landing-page">
+
+      {/* HERO SECTION */}
+      <div className="hero">
         <Slider {...settings}>
-          <div className="slide">
-            <img src="/images/Electronics.jpg" alt="Electronics" />
+          <div className="hero-slide">
+            <img src="/images/Electronics.jpg" alt="electronics"/>
           </div>
-          <div className="slide">
-            <img src="/images/clothes.jpg" alt="Clothes" />
+
+          <div className="hero-slide">
+            <img src="/images/clothes.jpg" alt="fashion"/>
           </div>
-          <div className="slide">
-            <img src="/images/clothing.jpg" alt="Fashion" />
+
+          <div className="hero-slide">
+            <img src="/images/clothing.jpg" alt="fashion"/>
           </div>
         </Slider>
 
         <div className="hero-overlay">
-          <h1 className="hero-title">Lorreen Store</h1>
-          <p className="hero-subtitle">
-            Shop Electronics, Fashion & More
-          </p>
-
-          <button
-            className="hero-btn"
-            onClick={() => navigate("/products")}
-          >
-            Shop Now
-          </button>
+          <h1>Lorreen Store</h1>
+          <p>Electronics • Fashion • Accessories</p>
+          <button>Shop Now</button>
         </div>
       </div>
 
+
       {/* FEATURED CATEGORIES */}
       <section className="categories">
+
         <h2>Featured Categories</h2>
 
         <div className="category-grid">
-          <div className="category-card" onClick={() => navigate("/products")}>
-            <img src="/images/Electronics.jpg" alt="electronics" />
-            <h3>Electronics</h3>
+
+          <div className="category-card">
+            <img src="/images/Electronics.jpg"/>
+            <span>Electronics</span>
           </div>
 
-          <div className="category-card" onClick={() => navigate("/products")}>
-            <img src="/images/clothing.jpg" alt="fashion" />
-            <h3>Fashion</h3>
+          <div className="category-card">
+            <img src="/images/clothes.jpg"/>
+            <span>Fashion</span>
           </div>
 
-          <div className="category-card" onClick={() => navigate("/products")}>
-            <img src="/images/clothes.jpg" alt="accessories" />
-            <h3>Accessories</h3>
+          <div className="category-card">
+            <img src="/images/clothing.jpg"/>
+            <span>Bags</span>
           </div>
+
+          <div className="category-card">
+            <img src="/images/Electronics.jpg"/>
+            <span>Accessories</span>
+          </div>
+
         </div>
       </section>
+
 
       {/* TRENDING PRODUCTS */}
       <section className="trending">
+
         <h2>Trending Products</h2>
 
-        <div className="trending-grid">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="product-card"
-              onClick={() => navigate(`/products/${product.id}`)}
-            >
-              <img src={product.image} alt={product.name} />
+        <div className="product-grid">
 
-              <h3>{product.name}</h3>
+          <div className="product-card">
+            <img src="/images/Electronics.jpg"/>
+            <h3>Wireless Headphones</h3>
+            <p>Ksh 4,500</p>
+          </div>
 
-              <p className="price">
-                Ksh {product.price}
-              </p>
-            </div>
-          ))}
+          <div className="product-card">
+            <img src="/images/clothes.jpg"/>
+            <h3>Designer Hoodie</h3>
+            <p>Ksh 3,200</p>
+          </div>
+
+          <div className="product-card">
+            <img src="/images/clothing.jpg"/>
+            <h3>Leather Handbag</h3>
+            <p>Ksh 6,000</p>
+          </div>
+
+          <div className="product-card">
+            <img src="/images/Electronics.jpg"/>
+            <h3>Smart Watch</h3>
+            <p>Ksh 7,800</p>
+          </div>
+
         </div>
       </section>
-    </>
+
+    </div>
   );
 }
