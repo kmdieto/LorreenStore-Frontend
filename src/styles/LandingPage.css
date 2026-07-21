@@ -1,21 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
 
 :root {
+  --tone-deepblue: #151f5a;
+  --tone-navy: #1e2769;
   --tone-maroon: #7f2e4d;
   --tone-purple: #7b39ce;
   --tone-beige: #ccb197;
   --tone-indigo: #23206e;
   --tone-violet: #4f2e9f;
-  --tone-turquoise: #2dc9d6;
+  --tone-turquoise: #20c4d8;
+  --tone-turquoise-soft: #66d8e8;
 }
 
 .landing-page {
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: #ffffff;
   background:
-    radial-gradient(circle at 16% 88%, rgba(203, 177, 151, 0.22), transparent 34%),
-    radial-gradient(circle at 77% 22%, rgba(45, 201, 214, 0.24), transparent 48%),
-    linear-gradient(132deg, #612347 0%, #5a2a92 34%, #27499e 67%, #16204f 100%);
+    radial-gradient(circle at 70% 30%, rgba(124, 58, 237, 0.35), transparent 40%),
+    radial-gradient(circle at 90% 60%, rgba(45, 212, 191, 0.25), transparent 35%),
+    linear-gradient(135deg, #0f172a, #312e81, #581c87, #7f1d1d);
   min-height: 100vh;
   padding-top: 6.4rem;
 }
@@ -28,6 +31,41 @@
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 2rem;
+  overflow: visible;
+}
+
+.curve1,
+.curve2,
+.curve3 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.curve1 {
+  width: 800px;
+  height: 800px;
+  right: -150px;
+  top: -100px;
+  background: radial-gradient(circle, rgba(177, 120, 255, 0.55), rgba(177, 120, 255, 0.05));
+  backdrop-filter: blur(20px);
+}
+
+.curve2 {
+  width: 1200px;
+  height: 1200px;
+  right: -500px;
+  top: 100px;
+  border: 120px solid rgba(0, 255, 220, 0.18);
+}
+
+.curve3 {
+  width: 900px;
+  height: 900px;
+  right: -250px;
+  top: -50px;
+  border: 90px solid rgba(110, 90, 255, 0.15);
 }
 
 .hero-left {
@@ -52,7 +90,7 @@
 }
 
 .hero-left h1 span {
-  color: #98e8ee;
+  color: #aeefff;
 }
 
 .hero-copy {
@@ -73,7 +111,7 @@
   color: #ffffff;
   font-weight: 700;
   letter-spacing: 0.07em;
-  background: linear-gradient(95deg, var(--tone-maroon), var(--tone-purple), var(--tone-turquoise));
+  background: linear-gradient(95deg, var(--tone-maroon), #7a3dbe 52%, #32bfd0);
   box-shadow: 0 16px 34px rgba(49, 24, 116, 0.5);
 }
 
@@ -94,7 +132,7 @@
   width: clamp(18rem, 34vw, 30rem);
   height: clamp(18rem, 34vw, 30rem);
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 25%, rgba(140, 77, 224, 0.76), rgba(44, 186, 214, 0.28), rgba(35, 32, 110, 0.38));
+  background: radial-gradient(circle at 30% 25%, rgba(140, 77, 224, 0.72), rgba(53, 201, 224, 0.42), rgba(35, 32, 110, 0.34));
   outline: 2px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -117,7 +155,7 @@
   width: 10.5rem;
   height: 10.5rem;
   border-radius: 50%;
-  background: linear-gradient(145deg, rgba(127, 46, 77, 0.8), rgba(79, 46, 159, 0.84), rgba(45, 201, 214, 0.62));
+  background: linear-gradient(145deg, rgba(127, 46, 77, 0.82), rgba(79, 46, 159, 0.84), rgba(32, 196, 216, 0.58));
   border: 3px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
@@ -143,11 +181,11 @@
   right: 2.4rem;
   bottom: 0;
   transform: translateY(50%);
-  z-index: 5;
+  z-index: 8;
   border-radius: 1.3rem;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  background: linear-gradient(95deg, rgba(127, 46, 77, 0.65), rgba(79, 46, 159, 0.58), rgba(45, 201, 214, 0.45));
+  background: linear-gradient(95deg, rgba(127, 46, 77, 0.34), rgba(79, 46, 159, 0.3), rgba(32, 196, 216, 0.28));
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.13);
   overflow: hidden;
@@ -179,13 +217,43 @@
   color: rgba(235, 239, 255, 0.9);
 }
 
-.category-section {
+.wave-divider {
   max-width: 1320px;
-  margin: 4.8rem auto 0;
+  height: 104px;
+  margin: 2rem auto 0;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wave-divider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wave-divider-offer {
+  margin: 0.3rem auto -0.2rem;
+  height: 84px;
+}
+
+.category-section {
+  position: relative;
+  max-width: 1320px;
+  margin: 0 auto;
   padding: 3.4rem 2.4rem 1rem;
   color: #27114f;
-  background: linear-gradient(180deg, #f6efe5, #f8f1e7);
-  border-radius: 2rem 2rem 0 0;
+  background:
+    radial-gradient(circle at 50% 76%, rgba(84, 49, 124, 0.3), transparent 52%),
+    radial-gradient(circle at 88% 26%, rgba(48, 193, 212, 0.2), transparent 40%),
+    linear-gradient(180deg, #f3e8de 0%, #eddcd8 34%, #dbc5d0 66%, #c9b7d0 100%);
+  border-radius: 0 0 1.5rem 1.5rem;
+  overflow: visible;
+}
+
+.category-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section-head {
@@ -269,32 +337,23 @@
 }
 
 .offer-strip {
+  position: relative;
   max-width: 1320px;
-  margin: 1rem auto 3rem;
+  margin: 0 auto 3rem;
   padding: 1.5rem 2rem;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   background: linear-gradient(93deg, #61264c, #5d2c91, #2a5f96, #7f2e4d);
   box-shadow: 0 20px 36px rgba(32, 8, 65, 0.35);
+  overflow: hidden;
 }
 
 .offer-copy h3 {
   margin: 0;
   font-size: 2.6rem;
-  font-family: "Playfair Display", Georgia, serif;
-}
-
-.offer-copy p {
-  margin: 0.2rem 0;
-  font-size: 1.8rem;
-}
-
-.offer-copy small {
-  font-size: 1.3rem;
-  opacity: 0.95;
 }
 
 .offer-cta {
@@ -305,7 +364,7 @@
   color: #ffffff;
   font-weight: 700;
   letter-spacing: 0.08em;
-  background: linear-gradient(90deg, #7f2e4d, #7b39ce, #2dc9d6);
+  background: linear-gradient(90deg, #7f2e4d, #7b39ce, #3bc4d6);
   border-radius: 999px;
   padding: 0.95rem 2rem;
   white-space: nowrap;
@@ -363,6 +422,38 @@
 
   .category-grid {
     grid-template-columns: 1fr;
+  }
+
+  .wave-divider {
+    height: 78px;
+    margin-top: -0.3rem;
+  }
+
+  .wave-divider-offer {
+    height: 64px;
+  }
+
+  .curve1 {
+    width: 420px;
+    height: 420px;
+    right: -110px;
+    top: -40px;
+  }
+
+  .curve2 {
+    width: 620px;
+    height: 620px;
+    right: -300px;
+    top: 90px;
+    border-width: 78px;
+  }
+
+  .curve3 {
+    width: 500px;
+    height: 500px;
+    right: -150px;
+    top: -8px;
+    border-width: 56px;
   }
 
   .offer-strip {

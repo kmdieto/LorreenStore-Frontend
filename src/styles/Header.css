@@ -10,7 +10,7 @@
   padding: 1.1rem 3.2rem;
   color: #f6f8ff;
   backdrop-filter: blur(8px);
-  background: linear-gradient(92deg, rgba(95, 34, 66, 0.76), rgba(79, 46, 159, 0.66), rgba(42, 95, 150, 0.58));
+  background: linear-gradient(94deg, rgba(21, 31, 90, 0.84), rgba(64, 39, 136, 0.74), rgba(116, 48, 122, 0.68), rgba(41, 105, 153, 0.58));
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -30,8 +30,28 @@
   font-weight: 800;
   font-size: 1.1rem;
   color: #ffffff;
-  background: linear-gradient(145deg, #7f2e4d, #7b39ce 56%, #2dc9d6);
+  background: linear-gradient(145deg, #1f2b7a, #7b39ce 54%, #2dc9d6);
   box-shadow: 0 6px 18px rgba(53, 35, 132, 0.55);
+}
+
+.brand-icon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.brand-icon svg path:first-child {
+  fill: rgba(255, 255, 255, 0.16);
+  stroke: #ffffff;
+  stroke-width: 2.1;
+  stroke-linejoin: round;
+}
+
+.brand-icon svg path:nth-child(2),
+.brand-icon svg path:nth-child(3) {
+  stroke: #ffffff;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .logo {

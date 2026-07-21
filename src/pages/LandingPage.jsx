@@ -21,6 +21,10 @@ export default function LandingPage() {
   return (
     <div className="landing-page">
       <section className="hero-section">
+        <div className="curve1" aria-hidden="true"></div>
+        <div className="curve2" aria-hidden="true"></div>
+        <div className="curve3" aria-hidden="true"></div>
+
         <div className="hero-left">
           <p className="hero-eyebrow">FIND YOUR STYLE</p>
           <h1>
@@ -62,6 +66,15 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <div className="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="#F5E7DA"
+            d="M0,224 C320,320 720,80 1440,224 L1440,320 L0,320 Z"
+          />
+        </svg>
+      </div>
+
       <section className="category-section">
         <div className="section-head">
           <div>
@@ -89,6 +102,15 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
+
+      <div className="wave-divider wave-divider-offer" aria-hidden="true">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="#D8BFD2"
+            d="M0,128 C320,24 720,260 1440,128 L1440,320 L0,320 Z"
+          />
+        </svg>
+      </div>
 
       <section className="offer-strip">
         <div className="offer-copy">

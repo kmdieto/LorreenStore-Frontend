@@ -8,7 +8,13 @@ export default function Header() {
   return (
     <header className="header">
       <div className="brand-wrap">
-        <span className="brand-icon">L</span>
+        <span className="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img" focusable="false">
+            <path d="M14 17h20l3 22H11l3-22z" />
+            <path d="M18 18c0-5.2 2.9-8 6-8s6 2.8 6 8" fill="none" />
+            <path d="M20 24v9h8" fill="none" />
+          </svg>
+        </span>
         <h1 className="logo">LORREENSTORE</h1>
       </div>
 
