@@ -1,19 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Header.css"; // Make sure this exists
+import "../styles/Header.css";
 
 export default function Header() {
+  const navItems = ["Home", "Shop", "Categories", "New Arrivals", "Deals", "About Us"];
+
   return (
     <header className="header">
-      <h1 className="logo">Lorreen Store</h1>
+      <div className="brand-wrap">
+        <span className="brand-icon">L</span>
+        <h1 className="logo">LORREENSTORE</h1>
+      </div>
 
       <nav className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/categories">Categories</Link>
-        <Link to="/about">About</Link>
-        <Link to="/cart">Cart</Link>
+        {navItems.map((item) => (
+          <a
+            key={item}
+            href={item === "Home" ? "/" : item === "Shop" ? "/products" : "#"}
+            className={item === "Home" ? "active" : ""}
+          >
+            {item}
+          </a>
+        ))}
       </nav>
+
+      <div className="header-actions" aria-label="Quick actions">
+        <button type="button" className="icon-btn" aria-label="Search">⌕</button>
+        <button type="button" className="icon-btn" aria-label="Account">◯</button>
+        <button type="button" className="icon-btn" aria-label="Wishlist">♡</button>
+        <Link to="/products" className="icon-btn cart-btn" aria-label="Cart">
+          🛒
+          <span className="cart-badge">2</span>
+        </Link>
+      </div>
     </header>
   );
 }
